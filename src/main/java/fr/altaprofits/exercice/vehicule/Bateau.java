@@ -1,23 +1,16 @@
 package fr.altaprofits.exercice.vehicule;
 
-import fr.altaprofits.exercice.Point;
+import fr.altaprofits.exercice.mode.Naviguer;
 
-public class Bateau {
-    private static Integer idIndex = 0;
-    private final String refBateau;
-    private Point position;
+public class Bateau extends Vehicule implements Naviguer{
 
     public Bateau() {
-        position = new Point(0, 0);
-        refBateau = "B-" + ++idIndex;
+    	super("B");
     }
 
-    public void seDeplace(int x, int y) {
-        navigue(new Point(x, y));
-    }
+	@Override
+	public void naviguer() {
+		
+	}
 
-    private void navigue(Point destination) {
-        System.out.printf("Véhicule de type bateau (Ref : %s), se déplace de la position %s vers %s\n", refBateau, position, destination);
-        position = destination;
-    }
 }

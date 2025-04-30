@@ -1,23 +1,16 @@
 package fr.altaprofits.exercice.vehicule;
 
-import fr.altaprofits.exercice.Point;
+import fr.altaprofits.exercice.mode.Voler;
 
-public class Avion {
-    private static Integer idIndex = 0;
-    private final String refAvion;
-    private Point position;
-
+public class Avion extends Vehicule implements Voler{
+    
     public Avion() {
-        position = new Point(0, 0);
-        refAvion = "A-" + ++idIndex;
+    	super("A");
     }
 
-    public void seDeplace(int x, int y) {
-        vole(new Point(x, y));
-    }
+	@Override
+	public void voler() {
+		
+	}
 
-    private void vole(Point destination) {
-        System.out.printf("Véhicule de type avion (Ref : %s), se déplace de la position %s vers %s\n", refAvion, position, destination);
-        position = destination;
-    }
 }

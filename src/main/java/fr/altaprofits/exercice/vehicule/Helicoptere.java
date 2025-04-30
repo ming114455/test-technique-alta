@@ -1,23 +1,16 @@
 package fr.altaprofits.exercice.vehicule;
 
-import fr.altaprofits.exercice.Point;
+import fr.altaprofits.exercice.mode.Voler;
 
-public class Helicoptere {
-    private static Integer idIndex = 0;
-    private final String refHelico;
-    private Point position;
+public class Helicoptere extends Vehicule implements Voler{
 
     public Helicoptere() {
-        position = new Point(0, 0);
-        refHelico = "H-" + ++idIndex;
+    	super("H");
     }
 
-    public void seDeplace(int x, int y) {
-        vole(new Point(x, y));
-    }
+	@Override
+	public void voler() {
+		
+	}
 
-    private void vole(Point destination) {
-        System.out.printf("Véhicule de type hélicoptère (Ref : %s), se déplace de la position %s vers %s\n", refHelico, position, destination);
-        position = destination;
-    }
 }

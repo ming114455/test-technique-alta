@@ -1,23 +1,16 @@
 package fr.altaprofits.exercice.vehicule;
 
-import fr.altaprofits.exercice.Point;
+import fr.altaprofits.exercice.mode.Rouler;
 
-public class Moto {
-    private static Integer idIndex = 0;
-    private final String refMoto;
-    private Point position;
+public class Moto extends Vehicule implements Rouler{
 
     public Moto() {
-        position = new Point(0, 0);
-        refMoto = "M-" + ++idIndex;
+    	super("M");
     }
 
-    public void seDeplace(int x, int y) {
-        roule(new Point(x, y));
-    }
+	@Override
+	public void rouler() {
+		
+	}
 
-    private void roule(Point destination) {
-        System.out.printf("Véhicule de type moto (Ref : %s), se déplace de la position %s vers %s\n", refMoto, position, destination);
-        position = destination;
-    }
 }
