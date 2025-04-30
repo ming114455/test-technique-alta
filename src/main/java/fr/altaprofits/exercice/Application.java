@@ -1,5 +1,7 @@
 package fr.altaprofits.exercice;
 
+import fr.altaprofits.exercice.animal.Canard;
+import fr.altaprofits.exercice.animal.Pigeon;
 import fr.altaprofits.exercice.vehicule.Avion;
 import fr.altaprofits.exercice.vehicule.Helicoptere;
 import fr.altaprofits.exercice.vehicule.JetSki;
@@ -23,15 +25,35 @@ public class Application {
 
         hangar.imprimerToutDansConsole();
 
-        System.out.println("Nombre de véhicule dans le hangar : " + hangar.nombreDeVehiculeDansHangar());
-        System.out.println("Nombre de véhicule dans l'aéroport : " + hangar.nombreDeVehiculesDansAeroport());
-        System.out.println("Nombre de véhicule dans le garage : " + hangar.nombreDeVehiculesDansGarage());
-        System.out.println("Nombre de véhicule dans le port : " + hangar.nombreDeVehiculeDansPort());
+        System.out.println("Nombre de vï¿½hicule dans le hangar : " + hangar.nombreDeVehiculeDansHangar());
+        System.out.println("Nombre de vï¿½hicule dans l'aï¿½roport : " + hangar.nombreDeVehiculesDansAeroport());
+        System.out.println("Nombre de vï¿½hicule dans le garage : " + hangar.nombreDeVehiculesDansGarage());
+        System.out.println("Nombre de vï¿½hicule dans le port : " + hangar.nombreDeVehiculeDansPort());
 
         avion1.seDeplace(10, 30);
         avion1.seDeplace(30, 60);
         avion2.seDeplace(25, 55);
         helico1.seDeplace(23, 11);
         jetSki1.seDeplace(3, 9);
+        
+        
+        
+        // nouveau Ferme
+        Pigeon pigeon = new Pigeon();
+        Canard canard = new Canard();
+        
+        Ferme ferme = new Ferme();
+        ferme.entre(pigeon);
+        ferme.entre(canard);
+        
+        long nombreVolerDansHangarEtFerme = hangar.getNombreVolerDansHanger() + ferme.getNombreVolerDansFerme();
+        System.out.println("Nombre de voler dans hangar et ferme : " + nombreVolerDansHangarEtFerme);
+        
+        long nombreNaviguerDansHangarEtFerme = hangar.getNombreNaviguerDansHanger() + ferme.getNombreNaviguerDansFerme();
+        System.out.println("Nombre de naviguer dans hangar et ferme : " + nombreNaviguerDansHangarEtFerme);
+        
+        long nombreRoulerDansHangarEtFerme = hangar.getNombreRoulerDansHanger() + ferme.getNombreRoulerDansFerme();
+        System.out.println("Nombre de rouler dans hangar et ferme : " + nombreRoulerDansHangarEtFerme);
+        
     }
 }
